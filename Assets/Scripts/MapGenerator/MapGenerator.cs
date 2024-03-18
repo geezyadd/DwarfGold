@@ -11,7 +11,9 @@ public class MapGenerator : MonoBehaviour
 
     private Matrix<OreBase> _mapMatrix;
 
-    private void Start()
+    public Matrix<OreBase> GetMapMatrix() { return _mapMatrix; }
+
+    private void Awake()
     {
         _mapMatrix = new MatrixFactory<OreBase>().Create(_mapWidth, _mapHeight, new RockOre());
         Color cellColor;

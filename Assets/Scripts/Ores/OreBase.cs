@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class OreBase : ICloneable
 {
     private GameObject _cell;
+
     public virtual object Clone()
     {
         return this;

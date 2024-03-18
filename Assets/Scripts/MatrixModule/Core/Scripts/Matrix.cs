@@ -81,7 +81,7 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts {
             _matrixEntitySorter.GetSortedMatrixEntities(this, comparison, isAscending);
 
         public void SetValue(int x, int y, TMatrixEntity value) =>
-            Rows[Rows.Count - 1 - y].Data[x] = value;
+            Rows[y].Data[x] = value;
 
         public void RemoveColumn(int columnIndex, int count) {
             foreach (MatrixSavableContainer<TMatrixEntity> row in Rows)
@@ -117,7 +117,7 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts {
         }
 
         public bool ValidatePredicate(Vector2Int position, Predicate<TMatrixEntity> predicate = null) =>
-            predicate == null || predicate(Rows[Rows.Count - 1 - position.y].Data[position.x]);
+            predicate == null || predicate(Rows[position.y].Data[position.x]);
 
         private bool ValidateIndex(Vector2 position) => 
             position.y >= 0 && position.y < Rows.Count && position.x >= 0 && position.x < Rows[0].Data.Count;

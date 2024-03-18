@@ -5,6 +5,16 @@ using UnityEngine;
 
 public class GoldOre : OreBase
 {
+    private GameObject _cell;
+
+    public override void SetCell(GameObject cell)
+    {
+        _cell = cell;
+    }
+    public override GameObject GetCell()
+    {
+        return _cell;
+    }
     public override object Clone()
     {
         return new GoldOre();
