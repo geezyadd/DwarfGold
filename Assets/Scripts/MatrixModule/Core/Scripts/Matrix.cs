@@ -69,8 +69,8 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts {
         public void ReplaceMatrixEntity(TMatrixEntity newEntity, Predicate<TMatrixEntity> predicate) =>
             _matrixEntityReplacer.ReplaceMatrixEntity(this, newEntity, predicate);
 
-        public List<Vector2Int> PathFinding(Vector2Int start, Vector2Int end, Predicate<TMatrixEntity> predicate = null) =>
-            _matrixPathFinder.PathFinding(this, start, end, predicate);
+        public List<Vector2Int> PathFinding(Vector2Int start, Vector2Int end, Predicate<TMatrixEntity> predicate = null, bool random = false) =>
+            _matrixPathFinder.PathFinding(this, start, end, predicate, random);
 
         public Node GetNeighborByDirection(Vector2Int position, Vector2Int direction) =>
             ValidateIndex(new Vector2(position.x  + direction.x, position.y + direction.y))
@@ -82,6 +82,9 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts {
 
         public void SetValue(int x, int y, TMatrixEntity value) =>
             Rows[y].Data[x] = value;
+
+        public TMatrixEntity GetValue(int x, int y) =>
+            Rows[y].Data[x];
 
         public void RemoveColumn(int columnIndex, int count) {
             foreach (MatrixSavableContainer<TMatrixEntity> row in Rows)
@@ -98,20 +101,45 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts {
 
             return true;
         }
-        
+
         public List<Vector2Int> GetNeighbors(Vector2Int position, Predicate<TMatrixEntity> predicate = null) {
             List<Vector2Int> neighbors = new();
             if (ValidateIndex(new Vector2(position.x, position.y - 1)) && ValidatePredicate(new Vector2Int(position.x, position.y - 1), predicate))
                 neighbors.Add(new Vector2Int(position.x, (position.y - 1)));
-
+        
             if (ValidateIndex(new Vector2(position.x, position.y + 1)) && ValidatePredicate(new Vector2Int(position.x, position.y + 1), predicate))
                 neighbors.Add(new Vector2Int(position.x, (position.y + 1)));
-
+        
             if (ValidateIndex(new Vector2(position.x - 1, position.y)) && ValidatePredicate(new Vector2Int(position.x - 1, position.y), predicate))
                 neighbors.Add(new Vector2Int(position.x - 1, position.y));
-
+        
             if (ValidateIndex(new Vector2(position.x + 1, position.y)) && ValidatePredicate(new Vector2Int(position.x + 1, position.y), predicate))
                 neighbors.Add(new Vector2Int(position.x + 1, position.y));
+        
+            return neighbors;
+        }
+
+        public List<Vector2Int> GetNeighborsRandomly(Vector2Int position, Predicate<TMatrixEntity> predicate = null)
+        {
+            List<Vector2Int> neighbors = new List<Vector2Int>();
+
+            // Add neighbors in a random order
+            List<Vector2Int> possibleNeighbors = new List<Vector2Int> {
+                new Vector2Int(position.x, position.y - 1),
+                new Vector2Int(position.x, position.y + 1),
+                new Vector2Int(position.x - 1, position.y),
+                new Vector2Int(position.x + 1, position.y)
+            };
+
+            possibleNeighbors = possibleNeighbors.OrderBy(x => UnityEngine.Random.value).ToList();
+
+            foreach (Vector2Int possibleNeighbor in possibleNeighbors)
+            {
+                if (ValidateIndex(new Vector2(possibleNeighbor.x, possibleNeighbor.y)) && ValidatePredicate(possibleNeighbor, predicate))
+                {
+                    neighbors.Add(possibleNeighbor);
+                }
+            }
 
             return neighbors;
         }

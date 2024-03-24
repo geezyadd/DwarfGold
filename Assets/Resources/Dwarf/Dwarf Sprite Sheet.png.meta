@@ -1,0 +1,1504 @@
+fileFormatVersion: 2
+guid: d9b2c24cc7b10804e93f52539e70a621
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 289
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f84e6920f67854b959e53ee51fa260
+      internalID: 1695027219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 289
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d822e13503ef247a98f0fb0b5f75d3
+      internalID: 557476851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 289
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a860859fa9b82e4ebca1e30199670d2
+      internalID: 35743132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 289
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3d3348c5cd26842abe01c667b4c220
+      internalID: -634693333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 289
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761cfdc67af3e95499bf95f2357d3391
+      internalID: -412674142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 258
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32acd23349fde840a9f1fa3c8dd19f3
+      internalID: -1097017380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 259
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4194fec483582a24d984976773c55bab
+      internalID: -1254607126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 258
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7352b35317a4783489b1a82f9f8538fd
+      internalID: 1255379611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 257
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95425d1049f26164d945354d1ec835ed
+      internalID: -955116383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 257
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3faa98e28bdc53f4391649cfe7a2029b
+      internalID: -963828594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 258
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7138bb16608acc94e957f3bc3864bef7
+      internalID: 1695507176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 258
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f17cdd2063671e4e90846d6f62db33a
+      internalID: 1328934487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 257
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bec6a36327f4f73429092ee76c35a69a
+      internalID: 608183081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 225
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d67b0159464de498dd16d0b50dc89a
+      internalID: 1023198712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 225
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07809a99cb9cd4a4680275af33722ac7
+      internalID: 1974700385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 225
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1e3c4054b065f42b1f5abec991e1ac
+      internalID: -1945225822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 225
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39fc30629fcf8294090c8d08d91e2b3a
+      internalID: -1983785869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 225
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6596dc69eeb334591dc932fcd4ba8d
+      internalID: 161616626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 225
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b08b59cd08393745afee1c4657136c2
+      internalID: 1579197478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 225
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1633848a77050f24daa720eef3e92d66
+      internalID: 673272908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 193
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3542ae663b0b93047a8515a64652d300
+      internalID: 1634703507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 193
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8bd10e69676414bb4514187f4ed2e4
+      internalID: -1598984595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 193
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1273fe450ad55a34dbe3c17ecb1e28ec
+      internalID: 456053688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 193
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0245b576d29af7047b189185d45e6fb8
+      internalID: -1612419893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 161
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c1a0271a16f0446a230a0f7c9422ca
+      internalID: 921927403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 161
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36c9e57b8d4a3e842838998e610361f6
+      internalID: -701621493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 161
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e418263af88c2b54d8b2855bd3e38fdc
+      internalID: -1824538827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 160
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f5313480c63ec498c5e34ebab5e536
+      internalID: -623295636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 160
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702e3ac918767474ab6b84cecc6437a2
+      internalID: -128887612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 161
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2214d489ad7d00444a152c535f7ea7a5
+      internalID: 139220865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 160
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7ffcd59f594a74bad89714612fa7c4
+      internalID: -425563514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 132
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e822de9348d38f744b8b7772752e4c51
+      internalID: 1324189681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 132
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfda6de3e83cf4049946591dc419e801
+      internalID: 1818742059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 132
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139b11a7e1adadd49ab10adc27fbac7f
+      internalID: 930590116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 132
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8517b418dedc39446b5964b0eeb4e4e9
+      internalID: 875388693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 132
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d9191884b3c1d448b3171927917380
+      internalID: -1064567157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 101
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8f9c99e39d3c0b42a1fcfda6acd6477
+      internalID: -268196144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 102
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7975169f87ff42b4ebce89e6d7cc9955
+      internalID: -2009608312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 101
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06fd5d4415e7006458b1eb6e83d2e6b5
+      internalID: -898895456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 100
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3cdd5f8cd008c940b1d443d0102deb8
+      internalID: 1710522288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 100
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f222f057e2d75cd4e859c222db3148fe
+      internalID: -1034710266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 101
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccfcc160646acea4fb62df14afee434b
+      internalID: 181620851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 101
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 248128448bd3d064d90275e9414e526a
+      internalID: -210123985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 100
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039e494b2f17a044287ac0e54ca1d236
+      internalID: -50911236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 68
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33780cf6bbdc2b04cbcaebe005286db9
+      internalID: -1133422768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 71
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e190e14d260e04a93f02910b70a524
+      internalID: -1043907758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 71
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef5c3d6de6aff747895a3c745341eb8
+      internalID: -1740747084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 72
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67f681d179cfd4468aa4c83d1879d7e
+      internalID: 1727537691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 68
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66be46c682dafe941b6fb49007e6b726
+      internalID: -1649987581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 68
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c10c1ca955a96645aa6efcc4c046256
+      internalID: -1395371612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 68
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a67779636eb9c4abeed5e12edba2bd
+      internalID: -997943286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 36
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22d87443a909444c8ea8b6678fab3c7
+      internalID: 1563129819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 36
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4628ebb3a58b1394d93217dbaa63faea
+      internalID: -1356363451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 36
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc13a95d5083444d9d88ff10c307792
+      internalID: -487785960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 36
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff152d3713adb14fb00c326d8c7791e
+      internalID: 1039441872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247fb30d7575a76479e56d691b866790
+      internalID: -108873193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 4
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25c747932670efb4c8932d276f95abe6
+      internalID: 1314510882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 4
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0013da10ff5327d4296f9498daab571a
+      internalID: -1973557440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 3
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c671fbcb973f68540ad6848c5f4b66c7
+      internalID: -1452167272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 3
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c248ff1d5f03de44d849be17fdc3d0e4
+      internalID: -122676985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 4
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af11f81e19c2122488e80e9a9f6840dc
+      internalID: -22336518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dwarf Sprite Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 3
+        width: 29
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99079d0a421c0314ba7b0456c3f80518
+      internalID: 153856818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Dwarf Sprite Sheet_0: 1695027219
+      Dwarf Sprite Sheet_1: 557476851
+      Dwarf Sprite Sheet_10: 1695507176
+      Dwarf Sprite Sheet_11: 1328934487
+      Dwarf Sprite Sheet_12: 608183081
+      Dwarf Sprite Sheet_13: 1023198712
+      Dwarf Sprite Sheet_14: 1974700385
+      Dwarf Sprite Sheet_15: -1945225822
+      Dwarf Sprite Sheet_16: -1983785869
+      Dwarf Sprite Sheet_17: 161616626
+      Dwarf Sprite Sheet_18: 1579197478
+      Dwarf Sprite Sheet_19: 673272908
+      Dwarf Sprite Sheet_2: 35743132
+      Dwarf Sprite Sheet_20: 1634703507
+      Dwarf Sprite Sheet_21: -1598984595
+      Dwarf Sprite Sheet_22: 456053688
+      Dwarf Sprite Sheet_23: -1612419893
+      Dwarf Sprite Sheet_24: 921927403
+      Dwarf Sprite Sheet_25: -701621493
+      Dwarf Sprite Sheet_26: -1824538827
+      Dwarf Sprite Sheet_27: -623295636
+      Dwarf Sprite Sheet_28: -128887612
+      Dwarf Sprite Sheet_29: 139220865
+      Dwarf Sprite Sheet_3: -634693333
+      Dwarf Sprite Sheet_30: -425563514
+      Dwarf Sprite Sheet_31: 1324189681
+      Dwarf Sprite Sheet_32: 1818742059
+      Dwarf Sprite Sheet_33: 930590116
+      Dwarf Sprite Sheet_34: 875388693
+      Dwarf Sprite Sheet_35: -1064567157
+      Dwarf Sprite Sheet_36: -268196144
+      Dwarf Sprite Sheet_37: -2009608312
+      Dwarf Sprite Sheet_38: -898895456
+      Dwarf Sprite Sheet_39: 1710522288
+      Dwarf Sprite Sheet_4: -412674142
+      Dwarf Sprite Sheet_40: -1034710266
+      Dwarf Sprite Sheet_41: 181620851
+      Dwarf Sprite Sheet_42: -210123985
+      Dwarf Sprite Sheet_43: -50911236
+      Dwarf Sprite Sheet_44: -1133422768
+      Dwarf Sprite Sheet_45: -1043907758
+      Dwarf Sprite Sheet_46: -1740747084
+      Dwarf Sprite Sheet_47: 1727537691
+      Dwarf Sprite Sheet_48: -1649987581
+      Dwarf Sprite Sheet_49: -1395371612
+      Dwarf Sprite Sheet_5: -1097017380
+      Dwarf Sprite Sheet_50: -997943286
+      Dwarf Sprite Sheet_51: 1563129819
+      Dwarf Sprite Sheet_52: -1356363451
+      Dwarf Sprite Sheet_53: -487785960
+      Dwarf Sprite Sheet_54: 1039441872
+      Dwarf Sprite Sheet_55: -108873193
+      Dwarf Sprite Sheet_56: 1314510882
+      Dwarf Sprite Sheet_57: -1973557440
+      Dwarf Sprite Sheet_58: -1452167272
+      Dwarf Sprite Sheet_59: -122676985
+      Dwarf Sprite Sheet_6: -1254607126
+      Dwarf Sprite Sheet_60: -22336518
+      Dwarf Sprite Sheet_61: 153856818
+      Dwarf Sprite Sheet_7: 1255379611
+      Dwarf Sprite Sheet_8: -955116383
+      Dwarf Sprite Sheet_9: -963828594
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

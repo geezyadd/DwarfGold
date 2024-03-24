@@ -14,11 +14,13 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts {
         void InsertShapeMatrix(IMatrix<TMatrixEntity> shape, int x, int y);
         int GetRowCount();
         void ReplaceMatrixEntity(TMatrixEntity newEntity, Predicate<TMatrixEntity> predicate);
-        List<Vector2Int> PathFinding(Vector2Int start, Vector2Int end, Predicate<TMatrixEntity> predicate);
+        List<Vector2Int> PathFinding(Vector2Int start, Vector2Int end, Predicate<TMatrixEntity> predicate, bool random);
+        List<Vector2Int> GetNeighborsRandomly(Vector2Int position, Predicate<TMatrixEntity> predicate = null);
         Node GetNeighborByDirection(Vector2Int position, Vector2Int direction);
         List<TMatrixEntity> GetSortedMatrixEntities(Comparison<TMatrixEntity> comparison, bool isAscending);
         void SetValue(int x, int y, TMatrixEntity value);
         void RemoveColumn(int columnIndex, int count);
+        TMatrixEntity GetValue(int x, int y);
         void RemoveRow(int rowIndex, int count);
         bool CheckForExpression(Predicate<TMatrixEntity> predicate, int columnIndex);
         List<Vector2Int> GetNeighbors(Vector2Int position, Predicate<TMatrixEntity> predicate = null);
