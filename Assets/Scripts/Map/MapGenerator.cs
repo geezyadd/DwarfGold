@@ -1,7 +1,7 @@
 using RSG.Muffin.MatrixModule.Core.Scripts;
 using RSG.Muffin.MatrixModule.Core.Scripts.MatrixFactory;
 using UnityEngine;
-using Zenject.SpaceFighter;
+using Zenject;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -15,7 +15,15 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private Sprite _minedOreSprite;
     [SerializeField] private Color _styleColor;
 
-    private Matrix<OreBase> _mapMatrix;
+    private IMatrix<OreBase> _mapMatrix;
+    private MapModel _mapmodel;
+
+    [Inject]
+
+    private void InjectDependencies(MapModel mapModel)
+    {
+        _mapmodel = mapModel;
+    }
 
     public void SetOreMined(Vector2Int step)
     {
@@ -23,8 +31,9 @@ public class MapGenerator : MonoBehaviour
         _mapMatrix.SetValue(step.x, step.y, new MinedOre());
         _mapMatrix.GetValue(step.x, step.y).SetCell(cell);
         cell.GetComponent<SpriteRenderer>().sprite = _minedOreSprite;
+        _mapmodel.AddMinedOre(step);
     }
-    public Matrix<OreBase> GetMapMatrix() { return _mapMatrix; }
+    public IMatrix<OreBase> GetMapMatrix() { return _mapMatrix; }
 
     private void Awake()
     {
@@ -47,12 +56,20 @@ public class MapGenerator : MonoBehaviour
                     {
                         //cellColor = Color.yellow;
                         _mapMatrix.SetValue(x, y, new GoldOre());
+                        _mapmodel.AddNotMinedOre(new Vector2Int(x, y));
                     }
                     else
                     {
                         //rock ore set
                     }
                 }
+                if(x == 1 && y == 0) 
+                    _mapMatrix.SetValue(x, y, new MinedOre());
+                
+
+                if(x == _mapMatrix.Rows[0].Data.Count - 1 && y == _mapMatrix.GetRowCount() - 1)
+                    _mapMatrix.SetValue(x, y, new MinedOre());
+
                 SetRenderer(renderer, _mapMatrix.GetValue(x, y));
                 _mapMatrix.Rows[y].Data[x].SetCell(cell);
             }

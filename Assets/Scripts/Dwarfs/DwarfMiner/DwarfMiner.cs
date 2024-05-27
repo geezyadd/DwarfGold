@@ -6,27 +6,29 @@ using Zenject;
 
 public class DwarfMiner : DwarfBase
 {
+    public TeamType Type { get; set; }
     private Vector2Int _spawnPosition;
     private Vector2Int _currentPosition;
     private List<Vector2Int> _path = new();
-
-    private Matrix<OreBase> _matrixMap;
+    private IMatrix<OreBase> _matrixMap;
     private MapGenerator _mapGenerator;
+    private MapModel _mapModel;
     private bool _isStepActive;
     private bool _isPathPassed;
     private bool _isRun;
     private bool _isAttack;
     [SerializeField] private float _moveToOneCellTime;
     [SerializeField] private float _mineCellTime;
-
-
     private DwarfAnimationType _currentAnimation;
     [SerializeField] private Animator _animator;
+    private List<Vector2Int> _points;
+    private bool _isPathActive;
 
     [Inject]
-    public void Construct(MapGenerator mapGenerator)
+    public void Construct(MapGenerator mapGenerator, MapModel mapModel)
     {
         _mapGenerator = mapGenerator;
+        _mapModel = mapModel;
     }
 
     public void Start()
@@ -35,38 +37,37 @@ public class DwarfMiner : DwarfBase
         _currentPosition = _spawnPosition;
         _matrixMap = _mapGenerator.GetMapMatrix();
         SetRandomPath();
-        if(_path.Count != 0)
-        {
-            MoveToPoint(_matrixMap, _path);
-        }
+        MoveToPoint(_matrixMap, _path);
         
     }
 
     private void SetRandomPath()
     {
         _path.Clear();
-        _path = _matrixMap.PathFinding(_currentPosition, GetRandomPoint(), x => x.GetType() != typeof(BedRockOre), true);
-        if (_path.Count == 0)
-        {
-            SetRandomPath();
-        }
+        _path = _matrixMap.PathFinding(_currentPosition, GetRandomPoint(), x => x.GetType() != typeof(BedRockOre));
     }
 
     private void SetPathToHome()
     {
         _path.Clear();
         _path = _matrixMap.PathFinding(_currentPosition, _spawnPosition, x => x.GetType() == typeof(MinedOre));
-        if (_path.Count == 0)
-        {
-            SetPathToHome();
-        }
     }
 
     private Vector2Int GetRandomPoint()
     {
-        int rows = _matrixMap.Rows.Count;
-        int cols = _matrixMap.Rows[0].Data.Count;
-        return new Vector2Int(Random.Range(0, cols), Random.Range(0, rows));
+        List<Vector2Int> points = new();
+        foreach (Vector2Int point in _mapModel.NotMinedOres)
+        {
+            if (_mapGenerator.GetMapMatrix().GetValue(point.x, point.y).GetType() == typeof(GoldOre)) {  points.Add(point); }
+        }
+        int randomIndex = Random.Range(0, points.Count);
+
+        if(points.Count == 0)
+        {
+            return _spawnPosition;
+        }
+
+        return points[randomIndex];
     }
 
     private bool PointValidator(Vector2Int point)
@@ -79,7 +80,7 @@ public class DwarfMiner : DwarfBase
         return true;
     }
 
-    public virtual void MoveToPoint(Matrix<OreBase> mapMatrix, List<Vector2Int> path)
+    public virtual void MoveToPoint(IMatrix<OreBase> mapMatrix, List<Vector2Int> path)
     {
         _matrixMap = mapMatrix;
         StartCoroutine(PathMover(path));
@@ -90,8 +91,32 @@ public class DwarfMiner : DwarfBase
         SetPathToHome();
         MoveToPoint(_matrixMap, _path);
     }
+
+    private void FixedUpdate()
+    {
+        if (!_isPathActive)
+        {
+            if (!_isPathPassed)
+            {
+                _isPathPassed = true;
+                SetRandomPath();
+                MoveToPoint(_matrixMap, _path);
+            }
+            else
+            {
+                GoToSpawnPosition();
+            }
+        }
+    }
+
     private IEnumerator PathMover(List<Vector2Int> path)
     {
+        _isPathActive = true;
+        if (path.Count == 0)
+        {
+            GoToSpawnPosition();
+            yield break;
+        }
         Vector2Int lastStep = _currentPosition;
         _isPathPassed = false;
         foreach (Vector2Int step in path)
@@ -99,6 +124,7 @@ public class DwarfMiner : DwarfBase
             if (_matrixMap.GetValue(lastStep.x, lastStep.y).GetType() == typeof(GoldOre))
             {
                 _isPathPassed = true;
+                break;
             }
             else if (_matrixMap.GetValue(step.x, step.y).GetType() == typeof(MinedOre))
             {
@@ -115,17 +141,7 @@ public class DwarfMiner : DwarfBase
                 StartCoroutine(MoveForOneCell(_moveToOneCellTime, step));
             }
         }
-        if (!_isPathPassed)
-        {
-            _isPathPassed = true;
-            SetRandomPath();
-            MoveToPoint(_matrixMap, _path);
-        }
-        else
-        {
-            GoToSpawnPosition();
-        }
-
+        _isPathActive = false;
     }
 
     private void SetStepPassed(Vector2Int step)

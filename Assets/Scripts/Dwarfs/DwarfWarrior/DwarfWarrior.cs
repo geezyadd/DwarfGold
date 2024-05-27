@@ -6,19 +6,20 @@ using Zenject;
 
 public class DwarfWarrior : DwarfBase
 {
+    public TeamType Type { get; set; }
     private Vector2Int _currentPosition;
     private List<Vector2Int> _path = new();
-    private Matrix<OreBase> _matrixMap;
+    private IMatrix<OreBase> _matrixMap;
     private MapGenerator _mapGenerator;
+    private MapModel _mapModel;
     private bool _isStepActive;
     private bool _isPathPassed;
 
-
-
     [Inject]
-    public void Construct(MapGenerator mapGenerator)
+    public void Construct(MapGenerator mapGenerator, MapModel mapModel)
     {
         _mapGenerator = mapGenerator;
+        _mapModel = mapModel;   
     }
 
     public void Start()
@@ -40,18 +41,8 @@ public class DwarfWarrior : DwarfBase
 
     private Vector2Int GetRandomPoint() // else
     {
-        List<Vector2Int> minedOres = new();
-        for(int y = 0; y < _matrixMap.Rows.Count; y++)
-        {
-            for (int x = 0; x < _matrixMap.Rows[0].Data.Count; x++)
-            {
-                if (_matrixMap.GetValue(x, y).GetType() == typeof(MinedOre)){
-                    minedOres.Add(new Vector2Int(x, y));
-                }
-            }
-        }
-
-        return minedOres[Random.Range(0, minedOres.Count)];
+        int pointCount = Random.Range(0, _mapModel.MinedOres.Count);
+        return _mapModel.MinedOres[pointCount];
     }
 
     private bool PointValidator(Vector2Int point)
@@ -64,7 +55,7 @@ public class DwarfWarrior : DwarfBase
         return true;
     }
 
-    public virtual void MoveToPoint(Matrix<OreBase> mapMatrix, List<Vector2Int> path)
+    public virtual void MoveToPoint(IMatrix<OreBase> mapMatrix, List<Vector2Int> path)
     {
         _matrixMap = mapMatrix;
         StartCoroutine(PathMover(path));

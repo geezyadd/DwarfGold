@@ -2,9 +2,9 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts {
     public class Node {
         public int X { get; }
         public int Y { get; }
-        public int TotalCost { get; set; }
-        public int CostSoFar { get; set; }
-        public int HeuristicCost { get; set; }
+        public float TotalCost { get; set; }
+        public float CostSoFar { get; set; }
+        public float HeuristicCost { get; set; }
         public Node Parent { get; set; }
 
         public Node(int x, int y) {

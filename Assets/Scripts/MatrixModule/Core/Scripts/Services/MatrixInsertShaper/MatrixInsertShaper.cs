@@ -2,31 +2,39 @@ using System;
 using System.Collections.Generic;
 
 namespace RSG.Muffin.MatrixModule.Core.Scripts.Services.MatrixInsertShaper {
-    public class MatrixInsertShaper : IMatrixInsertShaper 
-    {
-        public void InsertShapeMatrix<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, IMatrix<TMatrixEntity> shape, int x, int y) {
-            if (shape.GetRowCount() > matrix.Rows.Count || shape.GetRowById(0).Count >= matrix.Rows[0].Data.Count)
+    public class MatrixInsertShaper : IMatrixInsertShaper {
+        public void InsertShapeMatrix<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, IMatrix<TMatrixEntity> shape, int x, int y, Predicate<TMatrixEntity> matrixPredicate = null, Predicate<TMatrixEntity> shapePredicate = null) {
+            if (shape.GetRowCount() > matrix.GetRowCount() || shape.GetColumnCount() > matrix.GetColumnCount())
                 throw new IndexOutOfRangeException($"Row or column count is out of range.");
-            SilentInsertShapeMatrix(matrix, shape, x, y);
+            SilentInsertShapeMatrix(matrix, shape, x, y, matrixPredicate, shapePredicate);
         }
 
-        public void SilentInsertShapeMatrix<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, IMatrix<TMatrixEntity> shape, int x, int y) {
-            int ownY = matrix.Rows.Count - 1 - y;
+        public void SilentInsertShapeMatrix<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, IMatrix<TMatrixEntity> shape, int x, int y, Predicate<TMatrixEntity> matrixPredicate = null, Predicate<TMatrixEntity> shapePredicate = null) {
+            int ownY = y;
             for (int shapeY = 0; shapeY < shape.GetRowCount(); shapeY++) {
                 List<TMatrixEntity> row = shape.GetRowById(shapeY);
                 int ownX = x;
                 foreach (TMatrixEntity entity in row) {
-                    matrix.Rows[ownY].Data[ownX] = entity;
+                    if (ownX >= matrix.GetColumnCount()) 
+                        break;
+                   
+                    if ((shapePredicate == null || shapePredicate(entity)) && (matrixPredicate == null || matrixPredicate(matrix.GetValue(ownX, ownY))))
+                        matrix.SetValue(ownX, ownY, entity);
 
                     ownX++;
-                    if (ownX == matrix.Rows[0].Data.Count)
-                        break;
                 }
 
-                ownY--;
-                if (ownY == matrix.Rows.Count)
+                ownY++;
+                if (ownY == matrix.GetRowCount())
                     return;
             }
+        }
+        
+        public bool TryInsertShapeMatrix<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, IMatrix<TMatrixEntity> shape, int x, int y, Predicate<TMatrixEntity> matrixPredicate = null, Predicate<TMatrixEntity> shapePredicate = null) {
+            if (shape.GetRowCount() > matrix.GetRowCount() || shape.GetColumnCount() > matrix.GetColumnCount())
+                return false;
+            SilentInsertShapeMatrix(matrix, shape, x, y, matrixPredicate, shapePredicate);
+            return true;
         }
     }
 }

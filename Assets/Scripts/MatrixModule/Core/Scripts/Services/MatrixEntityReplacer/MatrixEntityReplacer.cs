@@ -13,7 +13,7 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts.Services.MatrixEntityReplacer {
         }
     
         private void ReplaceMatrixRowEntity<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, MatrixSavableContainer<TMatrixEntity> row, TMatrixEntity newEntity, Predicate<TMatrixEntity> predicate) {
-            for (int matrixX = 0; matrixX < matrix.Rows[0].Data.Count; matrixX++) {
+            for (int matrixX = 0; matrixX < matrix.GetColumnCount(); matrixX++) {
                 if (predicate(row.Data[matrixX])) {
                     if (typeof(TMatrixEntity).IsValueType)
                         row.Data[matrixX] = newEntity;

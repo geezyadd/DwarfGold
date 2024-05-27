@@ -8,9 +8,9 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts.Services.ExpandMatrix {
         public void ExpandMatrix<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, MatrixOperationDirection matrixOperationDirection, int number, TMatrixEntity fillEntity) =>
             matrix.Rows = GetExpandMatrix(matrix, matrixOperationDirection, fillEntity, number).Rows;
         
-        private Matrix<TMatrixEntity> GetExpandMatrix<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, MatrixOperationDirection matrixOperationDirection, TMatrixEntity fillEntity, int number) {
-            int newMatrixRowCount = matrix.Rows.Count;
-            int newMatrixColumnCount = matrix.Rows[0].Data.Count;
+        private IMatrix<TMatrixEntity> GetExpandMatrix<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, MatrixOperationDirection matrixOperationDirection, TMatrixEntity fillEntity, int number) {
+            int newMatrixRowCount = matrix.GetRowCount();
+            int newMatrixColumnCount = matrix.GetColumnCount();
             int insertY = 0;
             int insertX = 0;
             switch (matrixOperationDirection) {
@@ -22,16 +22,16 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts.Services.ExpandMatrix {
                     newMatrixColumnCount += number;
                     break;
                 case MatrixOperationDirection.Top: 
+                    insertY = number;
                     newMatrixRowCount += number;
                     break;
                 case MatrixOperationDirection.Bottom: 
-                    insertY = number;
                     newMatrixRowCount += number;
                     break;
                 default: throw new ArgumentException(INVALID_DIRECTION);
             }
             
-            Matrix<TMatrixEntity> expandMatrix = new MatrixFactory<TMatrixEntity>().Create(newMatrixColumnCount, newMatrixRowCount, fillEntity);
+            IMatrix<TMatrixEntity> expandMatrix = new MatrixFactory<TMatrixEntity>().Create(newMatrixColumnCount, newMatrixRowCount, fillEntity);
             expandMatrix.SilentInsertShapeMatrix(matrix, insertX, insertY);
             return expandMatrix;
         }

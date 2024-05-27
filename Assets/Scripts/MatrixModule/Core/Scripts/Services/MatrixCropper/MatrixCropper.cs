@@ -59,7 +59,7 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts.Services.MatrixCropper {
         }
         
         private void CropMatrixLeft<TMatrixEntity>(IMatrix<TMatrixEntity> matrix,int number) {
-            if (number > matrix.Rows[0].Data.Count || number < 0)
+            if (number > matrix.GetColumnCount() || number < 0)
                 throw new IndexOutOfRangeException($"Column count {number} is out of range.");
 
             matrix.RemoveColumn(0 , number);
@@ -67,8 +67,8 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts.Services.MatrixCropper {
         
         private void CropMatrixLeftByRule<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, Predicate<TMatrixEntity> predicate = null) {
             if (predicate != null) {
-                for(int i = matrix.Rows[0].Data.Count; i > 0; i--){
-                    if (matrix.CheckForExpression(predicate, 0))
+                for(int i = matrix.GetColumnCount(); i > 0; i--){
+                    if (!matrix.CheckForExpression(predicate, 0))
                         return;
                     matrix.RemoveColumn(0, 1);
                 }
@@ -76,11 +76,11 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts.Services.MatrixCropper {
         }
         
         private void CropMatrixRight<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, int number) {
-            if (number > matrix.Rows[0].Data.Count || number < 0)
+            if (number > matrix.GetColumnCount() || number < 0)
                 throw new IndexOutOfRangeException($"Column count {number} is out of range.");
             
             int iteration = 0;
-            for (int y = matrix.Rows[0].Data.Count - 1; y >= 0; y--) {
+            for (int y = matrix.GetColumnCount() - 1; y >= 0; y--) {
                 if(iteration == number)
                     return;
                 matrix.RemoveColumn(y, 1);
@@ -89,7 +89,7 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts.Services.MatrixCropper {
         }
         
         private void CropMatrixRightByRule<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, Predicate<TMatrixEntity> predicate ) {
-            for (int y = matrix.Rows[0].Data.Count - 1; y >= 0; y--) {
+            for (int y = matrix.GetColumnCount() - 1; y >= 0; y--) {
                 if (!matrix.CheckForExpression(predicate, y))
                     return;
                 matrix.RemoveColumn(y, 1);
@@ -97,16 +97,16 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts.Services.MatrixCropper {
         }
 
         private void CropMatrixTop<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, int number) {
-            if (number > matrix.Rows.Count || number < 0)
+            if (number > matrix.GetRowCount() || number < 0)
                 throw new IndexOutOfRangeException($"Column count {number} is out of range.");
 
-            matrix.Rows.RemoveRange(0, matrix.Rows.Count < number
-                ? matrix.Rows.Count
+            matrix.Rows.RemoveRange(0, matrix.GetRowCount() < number
+                ? matrix.GetRowCount()
                 : number);
         }
 
         private void CropMatrixTopByRule<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, Predicate<TMatrixEntity> predicate) {
-            for (int i = 0; i < matrix.Rows.Count; i++) {
+            for (int i = 0; i < matrix.GetRowCount(); i++) {
                 if (matrix.Rows[i].Data.All(value => predicate(value))) {
                     matrix.Rows.RemoveAt(i);
                     i--;
@@ -117,16 +117,16 @@ namespace RSG.Muffin.MatrixModule.Core.Scripts.Services.MatrixCropper {
         }
         
         private void CropMatrixBottom<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, int number) {
-            if (number > matrix.Rows.Count || number < 0)
+            if (number > matrix.GetRowCount() || number < 0)
                 throw new IndexOutOfRangeException($"Column count {number} is out of range.");
 
-            int startIndex = Math.Max(0, matrix.Rows.Count - number);
+            int startIndex = Math.Max(0, matrix.GetRowCount() - number);
             
             matrix.Rows.RemoveRange(startIndex, number);
         }
         
         private void CropMatrixBottomByRule<TMatrixEntity>(IMatrix<TMatrixEntity> matrix, Predicate<TMatrixEntity> predicate) {
-            for (int i = matrix.Rows.Count; i > 0; i--) {
+            for (int i = matrix.GetRowCount() - 1; i >= 0; i--) {
                 if (matrix.Rows[i].Data.All(value => predicate(value)))
                     matrix.Rows.RemoveAt(i);
                 else

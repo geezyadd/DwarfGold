@@ -6,5 +6,8 @@ public class MapGeneratorInstaller : MonoInstaller
     {
         Container.Bind<MapGenerator>().FromComponentsInHierarchy().AsSingle();
         Container.Bind<DwarfWarrior>().AsSingle();
+        Container.Bind<MapModel>().AsSingle();
+        Container.Bind<DwarfFactory>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<FundController>().FromComponentInHierarchy().AsSingle();
     }
 }
