@@ -9,6 +9,7 @@ public class DwarfMiner : DwarfBase
     public TeamType Type { get; set; }
     private Vector2Int _spawnPosition;
     private Vector2Int _currentPosition;
+    private System.Type _lastOreType;
     private List<Vector2Int> _path = new();
     private IMatrix<OreBase> _matrixMap;
     private MapGenerator _mapGenerator;
@@ -149,12 +150,6 @@ public class DwarfMiner : DwarfBase
                 break;
             }
 
-            if (_matrixMap.GetValue(lastStep.x, lastStep.y).GetType() == typeof(GoldOre))
-            {
-                _isGoldInBag = true;
-                _isPathPassed = true;
-                break;
-            }
             else if (_matrixMap.GetValue(step.x, step.y).GetType() == typeof(MinedOre))
             {
                 lastStep = step;
@@ -168,6 +163,12 @@ public class DwarfMiner : DwarfBase
                 yield return new WaitForSeconds(_mineCellTime);
                 _isAttack = false;
                 StartCoroutine(MoveForOneCell(_moveToOneCellTime, step));
+                if (_matrixMap.GetValue(step.x, step.y).GetType() == typeof(GoldOre))
+                {
+                    _isGoldInBag = true;
+                    _isPathPassed = true;
+                    break;
+                }
             }
         }
         _isPathActive = false;
@@ -184,7 +185,7 @@ public class DwarfMiner : DwarfBase
         float elapsedTime = 0;
         Vector3 startingPos = transform.position;
 
-        if (startingPos.x > step.x) // גûםוסעט ג מעהוכüםûי סונגטס
+        if (startingPos.x > step.x) 
         {
             gameObject.GetComponentInChildren<SpriteRenderer>().flipX = true;
         }
@@ -202,6 +203,7 @@ public class DwarfMiner : DwarfBase
         _isRun = false;
         transform.position = newPosition;
         _currentPosition = step;
+        _lastOreType = _matrixMap.GetValue(_currentPosition.x, _currentPosition.y).GetType();
         SetStepPassed(step);
         _isStepActive = false;
     }
