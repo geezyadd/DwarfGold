@@ -1,3 +1,4 @@
+using RSG.Muffin.MatrixModule.Core.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class MapModel
 
     public List<Vector2Int> MinedOres => _minedOres;
     public List<Vector2Int> NotMinedOres => _notMinedOres;
+    public IMatrix<OreBase> MapMatrix;
 
     public void AddMinedOre(Vector2Int minedOre)
     {

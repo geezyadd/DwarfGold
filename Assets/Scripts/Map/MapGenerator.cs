@@ -25,7 +25,7 @@ public class MapGenerator : MonoBehaviour
         _mapmodel = mapModel;
     }
 
-    public void SetOreMined(Vector2Int step)
+    public void SetSpriteOreMined(Vector2Int step)
     {
         GameObject cell = _mapMatrix.GetValue(step.x, step.y).GetCell();
         _mapMatrix.SetValue(step.x, step.y, new MinedOre());
@@ -33,6 +33,7 @@ public class MapGenerator : MonoBehaviour
         cell.GetComponent<SpriteRenderer>().sprite = _minedOreSprite;
         _mapmodel.AddMinedOre(step);
     }
+
     public IMatrix<OreBase> GetMapMatrix() { return _mapMatrix; }
 
     private void Awake()
@@ -54,13 +55,8 @@ public class MapGenerator : MonoBehaviour
 
                     if (randomValue < 0.2f)
                     {
-                        //cellColor = Color.yellow;
                         _mapMatrix.SetValue(x, y, new GoldOre());
                         _mapmodel.AddNotMinedOre(new Vector2Int(x, y));
-                    }
-                    else
-                    {
-                        //rock ore set
                     }
                 }
                 if(x == 1 && y == 0) 
@@ -74,6 +70,7 @@ public class MapGenerator : MonoBehaviour
                 _mapMatrix.Rows[y].Data[x].SetCell(cell);
             }
         }
+        _mapmodel.MapMatrix = _mapMatrix;
     }
 
     private void SetRenderer(SpriteRenderer renderer, OreBase oreBase)
@@ -85,6 +82,10 @@ public class MapGenerator : MonoBehaviour
         else if(oreBase.GetType() == typeof(GoldOre))
         {
             renderer.sprite = _goldOreSprite;
+        }
+        else if (oreBase.GetType() == typeof(MinedOre))
+        {
+            renderer.sprite = _minedOreSprite;
         }
         else
         {

@@ -1,3 +1,4 @@
+using UnityEngine;
 using Zenject;
 
 public class MapGeneratorInstaller : MonoInstaller
@@ -9,5 +10,8 @@ public class MapGeneratorInstaller : MonoInstaller
         Container.Bind<MapModel>().AsSingle();
         Container.Bind<DwarfFactory>().FromComponentInHierarchy().AsSingle();
         Container.Bind<FundController>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<IFactory<GameObject, Transform, GameObject>>()
+                 .To<CustomInjectedPrefabFactory>()
+                 .AsSingle();
     }
 }

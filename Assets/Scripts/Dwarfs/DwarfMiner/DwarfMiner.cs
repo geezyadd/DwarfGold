@@ -13,6 +13,7 @@ public class DwarfMiner : DwarfBase
     private IMatrix<OreBase> _matrixMap;
     private MapGenerator _mapGenerator;
     private MapModel _mapModel;
+    private FundController _fundController;
     private bool _isStepActive;
     private bool _isPathPassed;
     private bool _isRun;
@@ -23,12 +24,15 @@ public class DwarfMiner : DwarfBase
     [SerializeField] private Animator _animator;
     private List<Vector2Int> _points;
     private bool _isPathActive;
+    private bool _isScaryGoHome;
+    private bool _isGoldInBag;
 
     [Inject]
-    public void Construct(MapGenerator mapGenerator, MapModel mapModel)
+    public void Construct(MapGenerator mapGenerator, MapModel mapModel, FundController fundController)
     {
         _mapGenerator = mapGenerator;
         _mapModel = mapModel;
+        _fundController = fundController;
     }
 
     public void Start()
@@ -69,16 +73,7 @@ public class DwarfMiner : DwarfBase
 
         return points[randomIndex];
     }
-
-    private bool PointValidator(Vector2Int point)
-    {
-        if (_matrixMap.GetValue(point.x, point.y).GetType() == typeof(BedRockOre))
-        {
-            return false;
-        }
-
-        return true;
-    }
+    
 
     public virtual void MoveToPoint(IMatrix<OreBase> mapMatrix, List<Vector2Int> path)
     {
@@ -107,6 +102,30 @@ public class DwarfMiner : DwarfBase
                 GoToSpawnPosition();
             }
         }
+
+
+        if (_currentPosition == _spawnPosition && _isGoldInBag)
+        {
+            _isGoldInBag = false;
+            _fundController.IncreaseFund(Type);
+        }
+
+        if (_isGoldInBag)
+        {
+            GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
+            
+        }
+        else
+        {
+            if (Type == TeamType.Red)
+            {
+                GetComponentInChildren<SpriteRenderer>().color = Color.red;
+            }
+            else
+            {
+                GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+            }
+        }
     }
 
     private IEnumerator PathMover(List<Vector2Int> path)
@@ -117,12 +136,22 @@ public class DwarfMiner : DwarfBase
             GoToSpawnPosition();
             yield break;
         }
-        Vector2Int lastStep = _currentPosition;
+        
         _isPathPassed = false;
+        Vector2Int lastStep = _currentPosition;
         foreach (Vector2Int step in path)
         {
+            if (_isScaryGoHome)
+            {
+                _isGoldInBag = false;
+                _isPathPassed = true;
+                _isScaryGoHome = false;
+                break;
+            }
+
             if (_matrixMap.GetValue(lastStep.x, lastStep.y).GetType() == typeof(GoldOre))
             {
+                _isGoldInBag = true;
                 _isPathPassed = true;
                 break;
             }
@@ -146,7 +175,7 @@ public class DwarfMiner : DwarfBase
 
     private void SetStepPassed(Vector2Int step)
     {
-        _mapGenerator.SetOreMined(step);
+        _mapGenerator.SetSpriteOreMined(step);
     }
 
     private IEnumerator MoveForOneCell(float duration, Vector2Int step)
@@ -210,4 +239,30 @@ public class DwarfMiner : DwarfBase
         PlayAnimations(DwarfAnimationType.Run, _isRun);
         PlayAnimations(DwarfAnimationType.Attack, _isAttack);
     }
+
+    public bool ScaryGoHome()
+    {
+        _isScaryGoHome = true;
+        if (!_isPathActive)
+        {
+            GoToSpawnPosition();
+        }
+        return _isGoldInBag;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!_fundController.IsTeamsMeets)
+        {
+            if (other.gameObject.layer == 7)
+            {
+                DwarfMiner dwarf = other.gameObject.GetComponent<DwarfMiner>();
+                if (dwarf.Type != Type)
+                {
+                    _fundController.IsTeamsMeets = true;
+                }
+            }
+        }
+    }
+
 }
